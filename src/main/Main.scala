@@ -23,6 +23,7 @@ object Main {
   def search() = {
     print("> Search: ")
     val list = Contact.search(Console.readLine())
+    println(list.length + " record(s) found")
     list.foreach(contact =>
       println(contact)
     )
