@@ -44,4 +44,8 @@ object Contact {
     ContactDao.destroy(contact)
   }
   
+  def dropDB() = {
+    ContactDao.dropDB()
+  }
+  
 }

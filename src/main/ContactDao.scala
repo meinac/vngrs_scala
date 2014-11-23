@@ -38,6 +38,10 @@ object ContactDao {
     }.toSeq
   }
   
+  def dropDB() = {
+    collection.drop()
+  }
+  
   def destroy(contact: Contact) = {
     val obj = ContactMongoConverter.convertToMongoObject(contact)
     collection.remove(obj)

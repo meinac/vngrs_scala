@@ -15,7 +15,8 @@ object Main {
     println("1) Import XML File")
     println("2) Search in contact list")
     println("3) Print All")
-    println("4) About")
+    println("4) Remove All")
+    println("5) About")
     println("9) Exit")
     println("##########################")
   }
@@ -33,6 +34,10 @@ object Main {
     Contact.all().foreach(c =>
       println(c)
     )
+  }
+  
+  def dropDB() = {
+    Contact.dropDB()
   }
   
   def printAbout() = {
@@ -62,7 +67,8 @@ object Main {
         case "1" => importMenu()
         case "2" => search()
         case "3" => printAll()
-        case "4" => printAbout() 
+        case "4" => dropDB()
+        case "5" => printAbout() 
         case "9" => exit = true
         case _ => printMenu(true)
       }
