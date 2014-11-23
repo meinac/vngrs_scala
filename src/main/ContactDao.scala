@@ -21,7 +21,7 @@ object ContactDao {
   }
   
   def search(qString: String) = {
-    val query = $or("name" $regex (".*" + qString + ".*"), "lastName" $regex (".*" + qString + ".*"))
+    val query = $or("name" $regex ("(?i).*" + qString + ".*"), "lastName" $regex ("(?i).*" + qString + ".*"))
     val result = for(
       obj <- collection.find(query)
     ) yield convertFromMongo(Option(obj)) match {
